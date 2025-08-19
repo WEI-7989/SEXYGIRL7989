@@ -1,137 +1,423 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <!-- 指定HTML文件使用UTF-8編碼，避免中文亂碼 -->
   <meta charset="UTF-8">
-  <!-- viewport設定，讓網頁在手機、平板上能自適應寬度 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 網頁標題，會顯示在瀏覽器分頁上 -->
   <title>98Tea 茶飲館</title>
-
-  <!-- 載入Bootstrap 5.3.3的CSS，提供排版、響應式格線系統、按鈕樣式等 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- 自訂CSS樣式，控制背景顏色、字體、區塊外觀 -->
   <style>
-    body {
-      font-family: "Microsoft JhengHei", sans-serif; /* 預設字體：微軟正黑體 */
-      background-color: #faf7f2; /* 整個網站背景為米色 */
-    }
-    .hero {
-      height: 80vh; /* 佔據視窗高度的80% */
-      background: url('https://picsum.photos/1600/800?tea') no-repeat center center; /* 背景圖，居中不重複 */
-      background-size: cover; /* 背景圖放大填滿 */
-      color: white; /* 文字顏色白色 */
-      display: flex; /* 使用flexbox置中內容 */
-      align-items: center; /* 垂直置中 */
-      justify-content: center; /* 水平置中 */
-      flex-direction: column; /* 垂直排列 */
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* 文字加陰影，提升可讀性 */
-    }
-    .section {
-      padding: 70px 0; /* 區塊上下留白70px */
-    }
-    .product-card {
-      border: none; /* 移除卡片邊框 */
-      background: #fff; /* 卡片底色白色 */
-      border-radius: 12px; /* 圓角12px */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 卡片陰影 */
-      transition: 0.3s; /* 動畫過渡效果 */
-    }
-    .product-card:hover {
-      transform: translateY(-5px); /* 滑鼠移入時，卡片往上浮 */
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* 陰影加深 */
-    }
-    .product-card img {
-      border-radius: 12px 12px 0 0; /* 卡片上半部圖片圓角 */
-    }
-    footer {
-      background: #2c2c2c; /* 頁尾背景黑灰色 */
-      color: #fff; /* 字體顏色白色 */
-      padding: 20px; /* 上下間距20px */
-    }
+    body { font-family: "Microsoft JhengHei", sans-serif; background-color: #faf7f2; }
+    .hero { height: 80vh; background: url('https://picsum.photos/1600/800?tea') no-repeat center center; background-size: cover; color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; text-shadow: 2px 2px 6px rgba(0,0,0,0.6); }
+    .section { padding: 70px 0; }
+    .product-card { border: none; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s; height: 100%; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .product-card img { border-radius: 12px 12px 0 0; }
+    footer { background: #2c2c2c; color: #fff; padding: 20px; }
   </style>
 </head>
 <body>
 
-  <!-- 首頁大圖區塊 (Hero Section) -->
+  <!-- 首頁大圖 -->
   <section class="hero text-center">
-    <!-- 主標題，Bootstrap的display-3字級+加粗 -->
     <h1 class="display-3 fw-bold">98Tea 茶飲館</h1>
-    <!-- 副標題文字 -->
     <p class="lead">天然茶香，純粹好味道</p>
-    <!-- Bootstrap大型按鈕，點擊後捲動到#products區塊 -->
-    <a href="#products" class="btn btn-success btn-lg mt-3">查看菜單</a>
+    <a href="#contact" class="btn btn-success btn-lg mt-3">聯繫我們</a>
   </section>
 
-  <!-- 關於我們區塊 -->
+  <!-- 關於我們 -->
   <section id="about" class="section text-center">
     <div class="container">
       <h2 class="fw-bold">關於我們</h2>
       <p class="mt-3">我們堅持嚴選好茶葉，用心沖泡每一杯飲品，給你最純粹的茶香與美味。</p>
+      <a href="#contact" class="btn btn-primary btn-lg mt-3">聯繫我們</a>
     </div>
   </section>
 
-  <!-- 產品展示區塊 -->
+  <!-- 產品展示 -->
   <section id="products" class="section bg-light">
     <div class="container text-center">
-      <!-- 區塊標題 -->
       <h2 class="fw-bold mb-5">人氣飲品</h2>
-      <div class="row g-4"> <!-- Bootstrap排版：row，g-4表示欄與欄間距4 -->
+      <div class="row g-4">
 
-        <!-- 產品卡片1 -->
-        <div class="col-md-4"> <!-- 在中型以上裝置佔3欄 (一列3卡) -->
-          <div class="card product-card">
-            <!-- 商品圖片，使用picsum隨機圖佔位 -->
-            <img src="https://picsum.photos/400/300?random=11" class="card-img-top" alt="奶茶">
-            <div class="card-body">
-              <h5 class="card-title">珍珠奶茶</h5>
-              <p class="card-text">經典人氣飲品，香濃滑順。</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 產品卡片2 -->
         <div class="col-md-4">
-          <div class="card product-card">
-            <img src="https://picsum.photos/400/300?random=12" class="card-img-top" alt="綠茶">
-            <div class="card-body">
-              <h5 class="card-title">茉莉綠茶</h5>
-              <p class="card-text">清新茶香，回甘爽口。</p>
+          <a href="product1.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=1" class="card-img-top" alt="產品1">
+              <div class="card-body">
+                <h5 class="card-title">產品1</h5>
+                <p class="card-text">這是產品1的描述。</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
-        <!-- 產品卡片3 -->
+    
         <div class="col-md-4">
-          <div class="card product-card">
-            <img src="https://picsum.photos/400/300?random=13" class="card-img-top" alt="紅茶拿鐵">
-            <div class="card-body">
-              <h5 class="card-title">紅茶拿鐵</h5>
-              <p class="card-text">紅茶與鮮奶的完美比例。</p>
+          <a href="product2.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=2" class="card-img-top" alt="產品2">
+              <div class="card-body">
+                <h5 class="card-title">產品2</h5>
+                <p class="card-text">這是產品2的描述。</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
+    
+        <div class="col-md-4">
+          <a href="product3.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=3" class="card-img-top" alt="產品3">
+              <div class="card-body">
+                <h5 class="card-title">產品3</h5>
+                <p class="card-text">這是產品3的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product4.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=4" class="card-img-top" alt="產品4">
+              <div class="card-body">
+                <h5 class="card-title">產品4</h5>
+                <p class="card-text">這是產品4的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product5.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=5" class="card-img-top" alt="產品5">
+              <div class="card-body">
+                <h5 class="card-title">產品5</h5>
+                <p class="card-text">這是產品5的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product6.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=6" class="card-img-top" alt="產品6">
+              <div class="card-body">
+                <h5 class="card-title">產品6</h5>
+                <p class="card-text">這是產品6的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product7.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=7" class="card-img-top" alt="產品7">
+              <div class="card-body">
+                <h5 class="card-title">產品7</h5>
+                <p class="card-text">這是產品7的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product8.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=8" class="card-img-top" alt="產品8">
+              <div class="card-body">
+                <h5 class="card-title">產品8</h5>
+                <p class="card-text">這是產品8的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product9.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=9" class="card-img-top" alt="產品9">
+              <div class="card-body">
+                <h5 class="card-title">產品9</h5>
+                <p class="card-text">這是產品9的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product10.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=10" class="card-img-top" alt="產品10">
+              <div class="card-body">
+                <h5 class="card-title">產品10</h5>
+                <p class="card-text">這是產品10的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product11.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=11" class="card-img-top" alt="產品11">
+              <div class="card-body">
+                <h5 class="card-title">產品11</h5>
+                <p class="card-text">這是產品11的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product12.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=12" class="card-img-top" alt="產品12">
+              <div class="card-body">
+                <h5 class="card-title">產品12</h5>
+                <p class="card-text">這是產品12的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product13.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=13" class="card-img-top" alt="產品13">
+              <div class="card-body">
+                <h5 class="card-title">產品13</h5>
+                <p class="card-text">這是產品13的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product14.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=14" class="card-img-top" alt="產品14">
+              <div class="card-body">
+                <h5 class="card-title">產品14</h5>
+                <p class="card-text">這是產品14的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product15.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=15" class="card-img-top" alt="產品15">
+              <div class="card-body">
+                <h5 class="card-title">產品15</h5>
+                <p class="card-text">這是產品15的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product16.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=16" class="card-img-top" alt="產品16">
+              <div class="card-body">
+                <h5 class="card-title">產品16</h5>
+                <p class="card-text">這是產品16的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product17.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=17" class="card-img-top" alt="產品17">
+              <div class="card-body">
+                <h5 class="card-title">產品17</h5>
+                <p class="card-text">這是產品17的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product18.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=18" class="card-img-top" alt="產品18">
+              <div class="card-body">
+                <h5 class="card-title">產品18</h5>
+                <p class="card-text">這是產品18的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product19.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=19" class="card-img-top" alt="產品19">
+              <div class="card-body">
+                <h5 class="card-title">產品19</h5>
+                <p class="card-text">這是產品19的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product20.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=20" class="card-img-top" alt="產品20">
+              <div class="card-body">
+                <h5 class="card-title">產品20</h5>
+                <p class="card-text">這是產品20的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product21.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=21" class="card-img-top" alt="產品21">
+              <div class="card-body">
+                <h5 class="card-title">產品21</h5>
+                <p class="card-text">這是產品21的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product22.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=22" class="card-img-top" alt="產品22">
+              <div class="card-body">
+                <h5 class="card-title">產品22</h5>
+                <p class="card-text">這是產品22的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product23.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=23" class="card-img-top" alt="產品23">
+              <div class="card-body">
+                <h5 class="card-title">產品23</h5>
+                <p class="card-text">這是產品23的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product24.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=24" class="card-img-top" alt="產品24">
+              <div class="card-body">
+                <h5 class="card-title">產品24</h5>
+                <p class="card-text">這是產品24的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product25.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=25" class="card-img-top" alt="產品25">
+              <div class="card-body">
+                <h5 class="card-title">產品25</h5>
+                <p class="card-text">這是產品25的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product26.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=26" class="card-img-top" alt="產品26">
+              <div class="card-body">
+                <h5 class="card-title">產品26</h5>
+                <p class="card-text">這是產品26的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product27.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=27" class="card-img-top" alt="產品27">
+              <div class="card-body">
+                <h5 class="card-title">產品27</h5>
+                <p class="card-text">這是產品27的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product28.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=28" class="card-img-top" alt="產品28">
+              <div class="card-body">
+                <h5 class="card-title">產品28</h5>
+                <p class="card-text">這是產品28的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product29.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=29" class="card-img-top" alt="產品29">
+              <div class="card-body">
+                <h5 class="card-title">產品29</h5>
+                <p class="card-text">這是產品29的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+        <div class="col-md-4">
+          <a href="product30.html" class="text-decoration-none text-dark">
+            <div class="card product-card">
+              <img src="https://picsum.photos/400/300?random=30" class="card-img-top" alt="產品30">
+              <div class="card-body">
+                <h5 class="card-title">產品30</h5>
+                <p class="card-text">這是產品30的描述。</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    
       </div>
     </div>
   </section>
 
-  <!-- 聯絡我們區塊 -->
+  <!-- 聯絡我們 -->
   <section id="contact" class="section text-center">
     <div class="container">
       <h2 class="fw-bold">聯絡我們</h2>
       <p class="mt-3">地址：台北市中正區某某路 88 號</p>
       <p>Email: 98tea@mail.com | 電話: 02-1234-5678</p>
+      <a href="mailto:98tea@mail.com" class="btn btn-danger btn-lg mt-3">聯繫我們</a>
     </div>
   </section>
 
-  <!-- 頁尾區塊 -->
+  <!-- 頁尾 -->
   <footer class="text-center">
     <p>© 2025 98Tea 茶飲館. All Rights Reserved.</p>
   </footer>
 
-  <!-- 載入Bootstrap的JS功能，例如漢堡選單、按鈕互動 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
