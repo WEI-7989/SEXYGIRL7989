@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>98Tea 茶飲館</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #faf7f2;
+    }
+    .hero {
+      height: 80vh;
+      background: url('https://picsum.photos/1600/800?tea') no-repeat center center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .section {
+      padding: 70px 0;
+    }
+    .product-card {
+      border: none;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      border-radius: 12px 12px 0 0;
+    }
+    footer {
+      background: #2c2c2c;
+      color: #fff;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 首頁大圖 -->
+  <section class="hero text-center">
+    <h1 class="display-3 fw-bold">98Tea 茶飲館</h1>
+    <p class="lead">天然茶香，純粹好味道</p>
+    <a href="#products" class="btn btn-success btn-lg mt-3">查看菜單</a>
+  </section>
+
+  <!-- 關於我們 -->
+  <section id="about" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold">關於我們</h2>
+      <p class="mt-3">我們堅持嚴選好茶葉，用心沖泡每一杯飲品，給你最純粹的茶香與美味。</p>
+    </div>
+  </section>
+
+  <!-- 產品展示 -->
+  <section id="products" class="section bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">人氣飲品</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img src="https://picsum.photos/400/300?random=11" class="card-img-top" alt="奶茶">
+            <div class="card-body">
+              <h5 class="card-title">珍珠奶茶</h5>
+              <p class="card-text">經典人氣飲品，香濃滑順。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img src="https://picsum.photos/400/300?random=12" class="card-img-top" alt="綠茶">
+            <div class="card-body">
+              <h5 class="card-title">茉莉綠茶</h5>
+              <p class="card-text">清新茶香，回甘爽口。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img src="https://picsum.photos/400/300?random=13" class="card-img-top" alt="紅茶拿鐵">
+            <div class="card-body">
+              <h5 class="card-title">紅茶拿鐵</h5>
+              <p class="card-text">紅茶與鮮奶的完美比例。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡我們 -->
+  <section id="contact" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold">聯絡我們</h2>
+      <p class="mt-3">地址：台北市中正區某某路 88 號</p>
+      <p>Email: 98tea@mail.com | 電話: 02-1234-5678</p>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="text-center">
+    <p>© 2025 98Tea 茶飲館. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
