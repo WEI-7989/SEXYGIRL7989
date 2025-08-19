@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <!-- 指定HTML文件使用UTF-8編碼，避免中文亂碼 -->
   <meta charset="UTF-8">
+  <!-- viewport設定，讓網頁在手機、平板上能自適應寬度 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SexyGirl7989</title>
-  <!-- Bootstrap -->
+  <!-- 網頁標題，會顯示在瀏覽器分頁上 -->
+  <title>98Tea 茶飲館</title>
+
+  <!-- 載入Bootstrap 5.3.3的CSS，提供排版、響應式格線系統、按鈕樣式等 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 自訂CSS樣式，控制背景顏色、字體、區塊外觀 -->
   <style>
     body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background-color: #faf7f2;
+      font-family: "Microsoft JhengHei", sans-serif; /* 預設字體：微軟正黑體 */
+      background-color: #faf7f2; /* 整個網站背景為米色 */
     }
     .hero {
-      height: 80vh;
-      background: url('https://picsum.photos/1600/800?tea') no-repeat center center;
-      background-size: cover;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      height: 80vh; /* 佔據視窗高度的80% */
+      background: url('https://picsum.photos/1600/800?tea') no-repeat center center; /* 背景圖，居中不重複 */
+      background-size: cover; /* 背景圖放大填滿 */
+      color: white; /* 文字顏色白色 */
+      display: flex; /* 使用flexbox置中內容 */
+      align-items: center; /* 垂直置中 */
+      justify-content: center; /* 水平置中 */
+      flex-direction: column; /* 垂直排列 */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* 文字加陰影，提升可讀性 */
     }
     .section {
-      padding: 70px 0;
+      padding: 70px 0; /* 區塊上下留白70px */
     }
     .product-card {
-      border: none;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      border: none; /* 移除卡片邊框 */
+      background: #fff; /* 卡片底色白色 */
+      border-radius: 12px; /* 圓角12px */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 卡片陰影 */
+      transition: 0.3s; /* 動畫過渡效果 */
     }
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transform: translateY(-5px); /* 滑鼠移入時，卡片往上浮 */
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* 陰影加深 */
     }
     .product-card img {
-      border-radius: 12px 12px 0 0;
+      border-radius: 12px 12px 0 0; /* 卡片上半部圖片圓角 */
     }
     footer {
-      background: #2c2c2c;
-      color: #fff;
-      padding: 20px;
+      background: #2c2c2c; /* 頁尾背景黑灰色 */
+      color: #fff; /* 字體顏色白色 */
+      padding: 20px; /* 上下間距20px */
     }
   </style>
 </head>
 <body>
 
-  <!-- 首頁大圖 -->
+  <!-- 首頁大圖區塊 (Hero Section) -->
   <section class="hero text-center">
-    <h1 class="display-3 fw-bold">SexyGirl7989</h1>
-    <p class="lead">測試用</p>
+    <!-- 主標題，Bootstrap的display-3字級+加粗 -->
+    <h1 class="display-3 fw-bold">98Tea 茶飲館</h1>
+    <!-- 副標題文字 -->
+    <p class="lead">天然茶香，純粹好味道</p>
+    <!-- Bootstrap大型按鈕，點擊後捲動到#products區塊 -->
     <a href="#products" class="btn btn-success btn-lg mt-3">查看菜單</a>
   </section>
 
-  <!-- 關於我們 -->
+  <!-- 關於我們區塊 -->
   <section id="about" class="section text-center">
     <div class="container">
       <h2 class="fw-bold">關於我們</h2>
@@ -63,13 +72,17 @@
     </div>
   </section>
 
-  <!-- 產品展示 -->
+  <!-- 產品展示區塊 -->
   <section id="products" class="section bg-light">
     <div class="container text-center">
+      <!-- 區塊標題 -->
       <h2 class="fw-bold mb-5">人氣飲品</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
+      <div class="row g-4"> <!-- Bootstrap排版：row，g-4表示欄與欄間距4 -->
+
+        <!-- 產品卡片1 -->
+        <div class="col-md-4"> <!-- 在中型以上裝置佔3欄 (一列3卡) -->
           <div class="card product-card">
+            <!-- 商品圖片，使用picsum隨機圖佔位 -->
             <img src="https://picsum.photos/400/300?random=11" class="card-img-top" alt="奶茶">
             <div class="card-body">
               <h5 class="card-title">珍珠奶茶</h5>
@@ -77,6 +90,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 產品卡片2 -->
         <div class="col-md-4">
           <div class="card product-card">
             <img src="https://picsum.photos/400/300?random=12" class="card-img-top" alt="綠茶">
@@ -86,6 +101,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 產品卡片3 -->
         <div class="col-md-4">
           <div class="card product-card">
             <img src="https://picsum.photos/400/300?random=13" class="card-img-top" alt="紅茶拿鐵">
@@ -95,11 +112,12 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 聯絡我們 -->
+  <!-- 聯絡我們區塊 -->
   <section id="contact" class="section text-center">
     <div class="container">
       <h2 class="fw-bold">聯絡我們</h2>
@@ -108,13 +126,12 @@
     </div>
   </section>
 
-  <!-- 頁尾 -->
+  <!-- 頁尾區塊 -->
   <footer class="text-center">
     <p>© 2025 98Tea 茶飲館. All Rights Reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- 載入Bootstrap的JS功能，例如漢堡選單、按鈕互動 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
